@@ -1,0 +1,21 @@
+{
+    "name": "exlant/NeuralNetwork",
+    "authors": [
+        {
+            "name": "exlant",
+            "email": "andru.matvienko@gmail.com"
+        }
+    ],
+    "require": {
+        "php-ai/php-ml": "^0.6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\NeuralNetwork\\": "NeuralNetwork"
+        },
+        "classmap": [
+            "NeuralNetwork"
+        ]
+    }
+
+}
