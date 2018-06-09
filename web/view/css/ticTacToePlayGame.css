@@ -1,0 +1,265 @@
+
+div.centerContainer div.wrapper
+{
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+div.field,
+div.users
+{
+    display: inline-block;
+    vertical-align: top;
+}
+
+div.field
+{
+    width: 600px;
+    border: 1px solid black;
+    border-bottom: none;
+    min-height: 640px;
+}
+
+div.users
+{
+    border-top: 1px solid black;
+    
+    width: 287px;
+    height: 100%;
+}
+
+div.field div.title,
+div.users div.title
+{
+    padding: 6px;
+    font-size: 20px;
+    background: #d1e6e0;
+    text-align: center;
+    height: 21px;
+    
+}
+
+div.field div.title
+{
+    border-bottom: 1px solid black;
+    
+}
+
+div.roomParameters div.title
+{
+    border-bottom: 1px solid black;
+}
+
+div.users div.players div.title
+{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+div.users div.viewers div.title
+{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    
+}
+
+div.users div.viewers div.viewer
+{
+    margin: 15px 0px 0px 15px;
+}
+
+div.players ul
+{
+    padding-left: 20px;
+}
+
+div.players li
+{
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+div.players li.player
+{
+    list-style-type: none;
+}
+div.players li.moving
+{
+    list-style-type:circle;
+}
+
+
+
+/* поле для игры начало*/
+
+table.type2d
+{
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    
+}
+
+table.type2d td
+{
+    background-color: whitesmoke;
+    border: 1px solid black;
+/*    width: 25px;*/
+/*    height: 25px;*/
+    padding: 0px;
+    margin: 0px;
+}
+
+table.type2d td.coordination
+{
+    background-color: white;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+}
+
+table td img.fieldFigure,
+table td img.fieldEmtyMove,
+table td img.fieldEmty
+{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    vertical-align: bottom;
+}
+
+div.players img.fieldFigure
+{
+    vertical-align: bottom;
+    width: 15px;
+    height: 15px;
+    padding: 0px;
+    margin: 0px;
+}
+
+div.centerContainer div.wrapper div.field div.fieldButton
+{
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+div.centerContainer div.wrapper div.field div.fieldButton div
+{
+    width: 149px;
+    padding: 8px 0px;
+    height: 17px;
+    margin: 0px;
+    border-left: 1px solid black;
+    display: inline-block;
+    background-color: #d1e6e0;
+    cursor: pointer;
+}
+
+div.centerContainer div.wrapper div.field div.fieldButton div:first-child
+{
+    width: 150px;
+    border-left: none;
+}
+
+div.centerContainer div.wrapper div.field div.fieldButton div:hover
+{
+    background-color: #b0c3dd;
+    color: white;
+}
+
+/*playAgain*/  
+div.centerContainer div.wrapper div.users div.wrapperUsers div.players div.playAgain div.title
+{
+    font-size: 16px;
+    background-color: #4dd860;
+    border-top: none;
+    padding: 6px 0px; 
+    
+}
+
+div.centerContainer div.wrapper div.users div.wrapperUsers div.players div.playAgain div.button
+{
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+    border-bottom: 1px solid black;
+    width: 143px;
+    padding: 6px 0px;
+    background-color: #d1e6e0;
+     
+}
+
+#buttonYes
+{
+    border-right: 1px solid black;
+}
+
+#buttonYes:hover
+{
+    background-color: #4dd860;
+    color: white;
+    cursor: pointer;
+}
+
+#buttonNo:hover
+{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+div.users div.wrapperUsers div.players ul li.playerBackLight
+{
+    background-color: #c0f9b3;
+}
+
+/*dialogWindow*/
+div.dialogWindow
+{
+    font-size: 16px;
+    
+}
+
+div.dialogWindow div.header
+{
+    text-align: center;
+    padding: 10px;
+}
+
+div.dialogWindow div.text
+{
+    text-align: center;
+    padding: 15px;
+}
+
+div.dialogWindow div.buttons input[type="button"]
+{
+    padding: 2px;
+    width: 70px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+div.dialogWindow div.buttons input[name="Yes"]:hover,
+div.dialogWindow div.buttons input[name="Ok"]:hover 
+{
+    border: 1px outset grey;
+    border-radius: 3px;
+    background-color: #4dd860;
+}
+
+div.dialogWindow div.buttons input[name="No"]:hover
+{
+    border: 1px outset grey;
+    border-radius: 3px;
+    background-color: red;
+}

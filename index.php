@@ -1,10 +1,10 @@
 <?php
 
-use NeuralNetwork\Core\Settings;
-use NeuralNetwork\Trainer\TrainByFile;
-use NeuralNetwork\Core\FannCommand;
-use NeuralNetwork\Service\ErrorHandler;
-use NeuralNetwork\NeuralNetwork;
+use App\NeuralNetwork\Core\Settings;
+use App\NeuralNetwork\Trainer\TrainByFile;
+use App\NeuralNetwork\Core\FannCommand;
+use App\NeuralNetwork\Service\ErrorHandler;
+use App\NeuralNetwork\NeuralNetwork;
 use App\NeuralNetwork\Service\ErrorObserver;
 use App\NeuralNetwork\Test\PathFinder;
 
