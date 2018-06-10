@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Bundles\NeuralNetwork\Core;
 
-use App\Interfaces\IErrorHandler;
+use App\Core\Interfaces\IErrorHandler;
 use App\Bundles\NeuralNetwork\Interfaces\ISettings;
 use App\Bundles\NeuralNetwork\Interfaces\ITrainAble;
 

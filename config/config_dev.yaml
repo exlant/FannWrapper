@@ -66,8 +66,6 @@ doctrine:
                 class:    Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
                 enabled:  true
         mappings:
-            SonataMediaBundle: ~
-            GNSMediaBundle: ~
             gedmo_translatable:
                 type: annotation
                 prefix: Gedmo\Translatable\Entity
@@ -124,8 +122,18 @@ jms_serializer:
 
 # Nelmio API Doc Configuration
 nelmio_api_doc:
-    sandbox:
-        enabled:  true
-        authentication:
-            name: Authorization
-            delivery: header
+    documentation:
+        host: fann-nn.local
+        schemes: [http, https]
+        info:
+            title: FANN-NN
+            description: Research about Neural-Network!
+            version: 0.1
+        securityDefinitions:
+            Bearer:
+                type: apiKey
+                description: 'Value: Bearer {jwt}'
+                name: Authorization
+                in: header
+        security:
+            - Bearer: []

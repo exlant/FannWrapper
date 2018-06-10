@@ -47,3 +47,5 @@ services:
     Database\Fixtures\:
         resources: '../database/Fixtures'
         tags: ['doctrine.fixture.orm']
+        synthetic: true
+        public: true

@@ -6,7 +6,7 @@ namespace App\Bundles\NeuralNetwork;
 use App\Bundles\NeuralNetwork\Core\NNCommon;
 use App\Bundles\NeuralNetwork\Core\FannCommand;
 use App\Bundles\NeuralNetwork\Core\Settings;
-use App\Interfaces\IErrorHandler;
+use App\Core\Interfaces\IErrorHandler;
 use App\Bundles\NeuralNetwork\Interfaces\ITrainAble;
 
 /**

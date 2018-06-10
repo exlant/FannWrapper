@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use App\Interfaces\IErrorHandler;
+use App\Core\Interfaces\IErrorHandler;
 use SplSubject;
 
 /**
