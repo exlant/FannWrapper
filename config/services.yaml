@@ -44,6 +44,6 @@ services:
         calls:
             - [ setAnnotationReader, [ '@annotation_reader' ] ]
 
-    GNS\AppBundle\DataFixtures\ORM\:
-        resource: '../database/fixture/ORM'
+    Database\Fixtures\:
+        resources: '../database/Fixtures'
         tags: ['doctrine.fixture.orm']
