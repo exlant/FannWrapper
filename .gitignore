@@ -1,8 +1,12 @@
-###> symfony/framework-bundle ###
-/.env
-/public/bundles/
-/var/
-/vendor/
-###< symfony/framework-bundle ###
+/.idea
+/vendor
 
-/.idea/
+### APLICATION
+config/parameters.yml
+/.env
+
+/storage/cache/
+!/storage/cache/.gitkeep
+/storage/logs/
+!/storage/logs/.gitkeep
+*.php~
