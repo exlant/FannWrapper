@@ -1,0 +1,38 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# https://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: auction
+    database_user: root
+    database_password: 1
+
+    database_test_host: 127.0.0.1
+    database_test_dsn: 'mysql:host=127.0.0.1;dbname=auction_test'
+    database_test_port: ~
+    database_test_name: auction_test
+    database_test_user: root
+    database_test_password: 1
+
+    # You should uncomment this if you want to use pdo_sqlite
+    #database_path: '%kernel.project_dir%/var/data/data.sqlite'
+
+    mailer_transport:  gmail
+    mailer_host:       gmail.com
+    mailer_user:       test.for.symfony@gmail.com
+    mailer_password:   'emailForSymfony'
+    mailer_port:       ~
+    mailer_encryption: ~
+    mailer_from_name:  eAuction
+
+    # A secret key that's used to generate certain security-related tokens
+    secret: ThisTokenIsNotSoSecretChangeIt
+
+    server_env: test
+    cors_allow_origin: ['*']
+
+    # App parameters
+    api_host: 'http://api.real-estate-auction-develop.demo.gns-it.com'
+    app_host: 'https://app.domain.com'
+    app_reset_password_path: '/restore-password'

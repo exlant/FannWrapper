@@ -1,0 +1,46 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+
+    encoders:
+        GNS\UserBundle\Entity\User: bcrypt
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        api_doc:
+            pattern:      ^/api/doc
+            security:     false
+
+        api_oauth_token:
+            pattern:      ^/api/v1/oauth/token
+            security:     false
+
+        api_registration:
+            pattern:      ^/api/v1/user/registration
+            security:     false
+
+        api_restore_password:
+            pattern:      ^/api/v1/restore-password
+            security:     false
+
+        api:
+            pattern:      ^/api
+            fos_oauth:    true
+            stateless:    true
+
+    access_control:
+        - { path: ^/api/v1/admin,              role: ROLE_ADMIN }
+        - { path: ^/api/v1/blockchain,         role: ROLE_BLOCKCHAIN }
+        - { path: ^/api/v1/user$,              role: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
+        - { path: ^/api/v1,                    role: [ROLE_SELLER, ROLE_BUYER] }
+
+    role_hierarchy:
+        ROLE_ADMIN:       [ROLE_SELLER, ROLE_BUYER]
