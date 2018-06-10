@@ -1,12 +1,10 @@
-/.idea
-/vendor
-
-### APLICATION
-config/parameters.yml
-/.env
-
-storage/cache/*
-!storage/cache/.gitkeep
-storage/logs/*
-!storage/logs/.gitkeep
-*.php~
+vendor/
+#
+/config/parameters.yml
+.env
+#
+/storage/cache/*
+!/storage/cache/.gitkeep
+#
+/storage/log/*
+!/storage/log/.gitkeep
