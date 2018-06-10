@@ -1,0 +1,16 @@
+services:
+    gns_user.user_manager:
+        class: App\Bundles\UserBundle\Service\UserManager
+        arguments: ["@service_container"]
+
+    gns_user.registration_service:
+        class: App\Bundles\UserBundle\Service\RegistrationService
+        arguments: ["@service_container"]
+
+    gns_user.profile_service:
+        class: App\Bundles\UserBundle\Service\ProfileService
+        arguments: ["@service_container"]
+
+    gns_user.reset_password_service:
+        class: App\Bundles\UserBundle\Service\ResetPasswordService
+        arguments: ["@service_container"]

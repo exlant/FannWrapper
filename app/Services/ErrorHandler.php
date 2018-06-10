@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Core\Service;
+namespace App\Service;
 
-use App\Core\Interfaces\IErrorHandler;
+use App\Interfaces\IErrorHandler;
 
 /**
  * Class ErrorHandler

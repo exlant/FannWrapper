@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace App\NeuralNetwork;
+namespace App\Bundles\NeuralNetwork;
 
-use App\NeuralNetwork\Core\NNCommon;
-use App\NeuralNetwork\Core\FannCommand;
-use App\NeuralNetwork\Core\Settings;
-use App\Core\Interfaces\IErrorHandler;
-use App\NeuralNetwork\Interfaces\ITrainAble;
+use App\Bundles\NeuralNetwork\Core\NNCommon;
+use App\Bundles\NeuralNetwork\Core\FannCommand;
+use App\Bundles\NeuralNetwork\Core\Settings;
+use App\Interfaces\IErrorHandler;
+use App\Bundles\NeuralNetwork\Interfaces\ITrainAble;
 
 /**
  * Class NeuralNetwork

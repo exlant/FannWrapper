@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Controller\Api;
+namespace App\Http\Controllers\Api;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Response;
@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 /**
  * Class NeuralNetworkController
  *
- * @package App\Controller\Api
+ * @package App\Http\Controllers\Api
  */
 class NeuralNetworkController
 {

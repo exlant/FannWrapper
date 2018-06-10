@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace App\NeuralNetwork\Core;
+namespace App\Bundles\NeuralNetwork\Core;
 
 /**
  * Class Algoritm
  *
- * @package App\NeuralNetwork\Core
+ * @package App\Bundles\NeuralNetwork\Core
  */
 class Algoritm
 {

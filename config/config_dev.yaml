@@ -1,0 +1,131 @@
+imports:
+    - { resource: parameters.yaml }
+    - { resource: security.yaml }
+    - { resource: services.yaml }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: ru
+    fos_oauth_server.server.class: App\Core\Facades\OAuth2
+    jms_serializer.serialized_name_annotation_strategy.class: App\Core\Facades\CustomNameAnnotationStrategy
+
+framework:
+    #esi: ~
+    translator: { fallbacks: ['%locale%'] }
+    secret: '%secret%'
+    router:
+        resource: '%kernel.project_dir%/app/config/routing.yml'
+        strict_requirements: ~
+    form: ~
+    csrf_protection: ~
+    validation: { enable_annotations: true }
+    #serializer: { enable_annotations: true }
+    default_locale: '%locale%'
+    trusted_hosts: ~
+    session:
+        # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id: session.handler.native_file
+        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+    fragments: ~
+    http_method_override: true
+    assets: ~
+    php_errors:
+        log: true
+    templating:
+        engines: ['twig']
+
+# Twig Configuration
+twig:
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver: pdo_mysql
+        host: '%database_host%'
+        port: '%database_port%'
+        dbname: '%database_name%'
+        user: '%database_user%'
+        password: '%database_password%'
+        charset: UTF8
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: '%kernel.project_dir%/var/data/data.sqlite'
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #path: '%database_path%'
+
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+        filters:
+            softdeleteable:
+                class:    Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
+                enabled:  true
+        mappings:
+            SonataMediaBundle: ~
+            GNSMediaBundle: ~
+            gedmo_translatable:
+                type: annotation
+                prefix: Gedmo\Translatable\Entity
+                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
+                alias: GedmoTranslatable # (optional) it will default to the name set for the mapping
+                is_bundle: false
+            gedmo_loggable:
+                type: annotation
+                prefix: Gedmo\Loggable\Entity
+                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
+                alias: GedmoLoggable # (optional) it will default to the name set for the mapping
+                is_bundle: false
+
+# FOS Rest Configuration
+fos_rest:
+    routing_loader:
+        default_format: json
+        include_format: false
+    param_fetcher_listener: true
+    body_listener: true
+    body_converter:
+        enabled: true
+    view:
+        view_response_listener: force
+    serializer:
+        serialize_null: true
+
+# FOS User Configuration
+fos_user:
+    db_driver: orm
+    user_class: App\Bundles\UserBundle\Entity\User
+    firewall_name: api
+    from_email:
+        address:     noreply@example.com
+        sender_name: App
+    resetting:
+        token_ttl: 600
+
+# FOS oAuth Configuration
+fos_oauth_server:
+    db_driver:           orm
+    client_class:        App\Bundles\OAuthBundle\Entity\Client
+    access_token_class:  App\Bundles\OAuthBundle\Entity\AccessToken
+    refresh_token_class: App\Bundles\OAuthBundle\Entity\RefreshToken
+    auth_code_class:     App\Bundles\OAuthBundle\Entity\AuthCode
+    service:
+        user_provider: fos_user.user_provider.username
+
+# JMS Serializer Configuration
+jms_serializer:
+    handlers:
+        datetime:
+            default_format: "Y-m-d H:i:s"
+
+# Nelmio API Doc Configuration
+nelmio_api_doc:
+    sandbox:
+        enabled:  true
+        authentication:
+            name: Authorization
+            delivery: header

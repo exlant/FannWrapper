@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace App\NeuralNetwork\Core;
+namespace App\Bundles\NeuralNetwork\Core;
 
-use App\Core\Interfaces\IErrorHandler;
-use App\NeuralNetwork\Interfaces\ISettings;
+use App\Interfaces\IErrorHandler;
+use App\Bundles\NeuralNetwork\Interfaces\ISettings;
 
 /**
  * Class FannCommand

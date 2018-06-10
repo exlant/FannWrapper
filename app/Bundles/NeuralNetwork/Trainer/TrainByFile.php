@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\NeuralNetwork\Trainer;
+namespace App\Bundles\NeuralNetwork\Trainer;
 
-use App\NeuralNetwork\Core\TrainerCommon;
+use App\Bundles\NeuralNetwork\Core\TrainerCommon;
 
 /**
  * Class TrainByFile

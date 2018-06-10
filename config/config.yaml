@@ -1,3 +1,14 @@
+imports:
+    - { resource: parameters.yaml }
+    - { resource: security.yaml }
+    - { resource: services.yaml }
+
+parameters:
+    locale: ru
+    fos_oauth_server.server.class: App\Core\Facades\OAuth2
+    jms_serializer.serialized_name_annotation_strategy.class: App\Core\Facades\CustomNameAnnotationStrategy
+
+
 framework:
     secret: '%env(APP_SECRET)%'
     #default_locale: en

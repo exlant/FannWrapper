@@ -2,26 +2,26 @@
 parameters:
     database_host: 127.0.0.1
     database_port: null
-    database_name: auction
+    database_name: fann-nn
     database_user: root
     database_password: mss229
-    mailer_transport: gmail
-    mailer_host: gmail.com
-    mailer_user: test.for.symfony@gmail.com
-    mailer_password: emailForSymfony
-    mailer_port: null
-    mailer_encryption: null
-    secret: ThisTokenIsNotSoSecretChangeIt
-    server_env: test
-    mailer_from_name: eAuction
-    cors_allow_origin:
-        - '*'
     database_test_host: 127.0.0.1
     database_test_dsn: 'mysql:host=127.0.0.1;dbname=auction_test'
     database_test_port: null
     database_test_name: auction_test
     database_test_user: root
     database_test_password: mss229
-    app_reset_password_path: /restore-password
+    mailer_transport: gmail
+    mailer_host: gmail.com
+    mailer_user: test.for.symfony@gmail.com
+    mailer_password: emailForSymfony
+    mailer_port: null
+    mailer_encryption: null
+    mailer_from_name: eAuction
+    secret: ThisTokenIsNotSoSecretChangeIt
+    server_env: test
+    cors_allow_origin:
+        - '*'
     api_host: 'http://api.real-estate-auction-develop.demo.gns-it.com'
     app_host: 'https://app.domain.com'
+    app_reset_password_path: /restore-password

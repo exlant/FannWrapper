@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace App\NeuralNetwork\Interfaces;
+namespace App\Bundles\NeuralNetwork\Interfaces;
 
 /**
  * Interfase ISettings
  *
- * @package App\Core\Interfaces
+ * @package App\Interfaces
  */
 interface ISettings
 {

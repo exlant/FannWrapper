@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Core;
+namespace App;
 
 use Nelmio\ApiDocBundle\NelmioApiDocBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
@@ -14,7 +14,7 @@ use Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle;
 /**
  * Class Kernel
  *
- * @package App\Core
+ * @package App
  */
 class Kernel extends BaseKernel
 {
@@ -33,7 +33,7 @@ class Kernel extends BaseKernel
      */
     public function getCacheDir()
     {
-        return $this->getProjectDir() . '/var/cache/' . $this->environment;
+        return $this->getProjectDir() . '/storage/cache/' . $this->environment;
     }
 
     /**
@@ -41,7 +41,7 @@ class Kernel extends BaseKernel
      */
     public function getLogDir()
     {
-        return $this->getProjectDir() . '/var/log';
+        return $this->getProjectDir() . '/storage/logs';
     }
 
     /**
@@ -71,7 +71,7 @@ class Kernel extends BaseKernel
             $container->setParameter('container.dumper.inline_class_loader', true);
         });
 
-        $loader->load($this->getProjectDir() . '/config/config_' . $this->getEnvironment() . '.yml');
+        $loader->load($this->getProjectDir() . '/config/config_' . $this->getEnvironment() . '.yaml');
     }
 
     /**

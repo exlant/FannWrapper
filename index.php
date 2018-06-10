@@ -1,12 +1,12 @@
 <?php
 
-use App\NeuralNetwork\Core\Settings;
-use App\NeuralNetwork\Trainer\TrainByFile;
-use App\NeuralNetwork\Core\FannCommand;
-use App\NeuralNetwork\Service\ErrorHandler;
-use App\NeuralNetwork\NeuralNetwork;
-use App\NeuralNetwork\Service\ErrorObserver;
-use App\NeuralNetwork\Test\PathFinder;
+use App\Bundles\NeuralNetwork\Core\Settings;
+use App\Bundles\NeuralNetwork\Trainer\TrainByFile;
+use App\Bundles\NeuralNetwork\Core\FannCommand;
+use App\Bundles\NeuralNetwork\Service\ErrorHandler;
+use App\Bundles\NeuralNetwork\NeuralNetwork;
+use App\Bundles\NeuralNetwork\Service\ErrorObserver;
+use App\Bundles\NeuralNetwork\Test\PathFinder;
 
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/Common/Procedure/FileSystem.php';

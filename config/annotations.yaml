@@ -1,4 +1,4 @@
 controllers:
-    resource: ../../src/Controller/Api/
+    resource: ../app/Http/Controllers/Api/
     type: annotation
     prefix: /

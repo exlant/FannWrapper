@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\NeuralNetwork\Core;
+namespace App\Bundles\NeuralNetwork\Core;
 
-use App\Core\Interfaces\IErrorHandler;
+use App\Interfaces\IErrorHandler;
 
 /**
  * Class NNCommon

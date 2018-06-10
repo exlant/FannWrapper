@@ -3,7 +3,7 @@
 security:
 
     encoders:
-        GNS\UserBundle\Entity\User: bcrypt
+        App\Bundles\UserBundle\Entity\User: bcrypt
 
     providers:
         fos_userbundle:
@@ -35,12 +35,3 @@ security:
             pattern:      ^/api
             fos_oauth:    true
             stateless:    true
-
-    access_control:
-        - { path: ^/api/v1/admin,              role: ROLE_ADMIN }
-        - { path: ^/api/v1/blockchain,         role: ROLE_BLOCKCHAIN }
-        - { path: ^/api/v1/user$,              role: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
-        - { path: ^/api/v1,                    role: [ROLE_SELLER, ROLE_BUYER] }
-
-    role_hierarchy:
-        ROLE_ADMIN:       [ROLE_SELLER, ROLE_BUYER]

@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\NeuralNetwork\Test;
+namespace App\Bundles\NeuralNetwork\Test;
 
-use App\NeuralNetwork\Core\NNCommon;
+use App\Bundles\NeuralNetwork\Core\NNCommon;
 
 /**
  * Class PathFinder
