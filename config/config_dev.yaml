@@ -7,8 +7,8 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: ru
-    fos_oauth_server.server.class: App\Core\Facades\OAuth2
-    jms_serializer.serialized_name_annotation_strategy.class: App\Core\Facades\CustomNameAnnotationStrategy
+    fos_oauth_server.server.class: App\Bundles\OAuth2Bundle\OAuth2
+    jms_serializer.serialized_name_annotation_strategy.class: App\Bundles\OAuth2Bundle\OAuth2
 
 framework:
     #esi: ~
@@ -107,10 +107,10 @@ fos_user:
 # FOS oAuth Configuration
 fos_oauth_server:
     db_driver:           orm
-    client_class:        App\Bundles\OAuthBundle\Entity\Client
-    access_token_class:  App\Bundles\OAuthBundle\Entity\AccessToken
-    refresh_token_class: App\Bundles\OAuthBundle\Entity\RefreshToken
-    auth_code_class:     App\Bundles\OAuthBundle\Entity\AuthCode
+    client_class:        App\Bundles\OAuth2Bundle\Entity\Client
+    access_token_class:  App\Bundles\OAuth2Bundle\Entity\AccessToken
+    refresh_token_class: App\Bundles\OAuth2Bundle\Entity\RefreshToken
+    auth_code_class:     App\Bundles\OAuth2Bundle\Entity\AuthCode
     service:
         user_provider: fos_user.user_provider.username
 

@@ -1,5 +1,7 @@
-<?php declare(strict_types=1);
-namespace App\Bundles\OAuthBundle\Entity;
+<?php
+declare(strict_types=1);
+
+namespace App\Bundles\OAuth2Bundle\Entity;
 
 use FOS\OAuthServerBundle\Entity\Client as BaseClient;
 use Doctrine\ORM\Mapping as ORM;

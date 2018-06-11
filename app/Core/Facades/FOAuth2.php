@@ -3,13 +3,14 @@ declare(strict_types=1);
 
 namespace App\Core\Facades;
 
+use App\Core\Interfaces\IOAuth2;
 use FOS\OAuthServerBundle\Storage\OAuthStorage;
 use OAuth2\OAuth2AuthenticateException;
 
 /**
  * @property OAuthStorage $storage
  */
-class OAuth2 extends \OAuth2\OAuth2
+class FOAuth2 extends \OAuth2\OAuth2 implements IOAuth2
 {
     const ERROR_INVALID_TOKEN = 'invalid_token';
     const ERROR_EXPIRED_TOKEN = 'expired_token';

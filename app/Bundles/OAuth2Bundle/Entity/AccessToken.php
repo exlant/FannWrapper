@@ -1,10 +1,12 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 
-namespace App\Bundles\OAuthBundle\Entity;
+namespace App\Bundles\OAuth2Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\OAuthServerBundle\Entity\AccessToken as BaseAccessToken;
 use App\Bundles\UserBundle\Entity\User;
+use phpDocumentor\Reflection\Types\Nullable;
 
 /**
  * AccessToken
@@ -24,7 +26,7 @@ class AccessToken extends BaseAccessToken
     protected $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Bundles\OAuthBundle\Entity\Client")
+     * @ORM\ManyToOne(targetEntity="App\Bundles\OAuth2Bundle\Entity\Client")
      * @ORM\JoinColumn(nullable=false)
      */
     protected $client;
@@ -38,9 +40,9 @@ class AccessToken extends BaseAccessToken
     /**
      * Get id
      *
-     * @return integer
+     * @return integer|Nullable
      */
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Bundles\UserBundle\DependencyInjection;
+namespace App\Bundles\OAuth2Bundle\DI;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -15,11 +15,13 @@ class Configuration implements ConfigurationInterface
 {
     /**
      * {@inheritdoc}
+     *
+     * @return TreeBuilder
      */
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('gns_user');
+        $rootNode = $treeBuilder->root('gnso_auth');
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for

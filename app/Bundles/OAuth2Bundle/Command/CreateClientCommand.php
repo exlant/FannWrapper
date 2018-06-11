@@ -1,19 +1,25 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 
-namespace App\Bundles\OAuthBundle\Command;
+namespace App\Bundles\OAuth2Bundle\Command;
 
-use App\Bundles\OAuthBundle\Entity\Client;
+use App\Bundles\OAuth2Bundle\Entity\Client;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * Class CreateClientCommand
+ *
+ * @package App\Bundles\OAuth2Bundle\Command
+ */
 class CreateClientCommand extends ContainerAwareCommand
 {
     /**
      * bin/console gns:oauth-server:client:create --grant-type=password --grant-type=refresh_token
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('gns:oauth-server:client:create')
@@ -49,6 +55,12 @@ EOT
             );
     }
 
+    /**
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     *
+     * @return int|null|void
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $clientManager = $this->getContainer()->get('fos_oauth_server.client_manager.default');

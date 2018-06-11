@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace App\Bundles\OAuthBundle\Service;
+namespace App\Bundles\OAuth2Bundle\Service;
 
 use App\Bundles\AppBundle\Extension\OAuth2;
-use App\Bundles\OAuthBundle\Entity\AccessToken;
+use App\Bundles\OAuth2Bundle\Entity\AccessToken;
 use App\Bundles\UserBundle\Entity\User;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;

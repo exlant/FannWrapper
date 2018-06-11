@@ -1,4 +1,0 @@
-services:
-    gns_oauth.security_service:
-        class: App\Bundles\OAuthBundle\Service\SecurityService
-        arguments: ["@service_container"]

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Bundles\UserBundle\DependencyInjection;
+namespace App\Bundles\OAuth2Bundle\DI;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -12,12 +12,14 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class GNSUserExtension extends Extension
+class OAuth2Extension extends Extension
 {
     /**
      * {@inheritdoc}
+     *
+     * @throws \Exception
      */
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);

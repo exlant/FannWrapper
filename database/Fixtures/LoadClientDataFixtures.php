@@ -6,7 +6,7 @@ namespace Database\Fixtures;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use GNS\OAuthBundle\Entity\Client;
+use App\Bundles\OAuth2Bundle\Entity\Client;
 use OAuth2\OAuth2;
 
 class LoadClientDataFixture extends AbstractFixture implements OrderedFixtureInterface

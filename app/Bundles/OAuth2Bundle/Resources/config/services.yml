@@ -1,0 +1,3 @@
+services:
+    App\Bundles\OAuth2Bundle\Service\SecurityService:
+        arguments: ["@service_container"]
