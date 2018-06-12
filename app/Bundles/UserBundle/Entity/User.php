@@ -2,32 +2,28 @@
 
 namespace App\Bundles\UserBundle\Entity;
 
-use Gedmo\Mapping\Annotation as Gedmo;
-use App\Bundles\AppBundle\Helpers\UuidGenerator;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
-use App\Bundles\AppBundle\Traits\TimestampableEntity;
-use App\Bundles\AppBundle\Traits\UuidableEntity;
+use App\Core\Traits\TimestampableEntity;
+use App\Core\Traits\UuidableEntity;
 use App\Bundles\UserBundle\Model\LegalStatus;
 use App\Bundles\UserBundle\Model\Role;
 use JMS\Serializer\Annotation as Serializer;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="fos_user")
  * @UniqueEntity("identificationNumber", groups={"Registration", "Profile"})
- * @Gedmo\Loggable
  */
 class User extends BaseUser
 {
     use TimestampableEntity;
     use UuidableEntity;
 
-    const SOURCE_REGISTRATION_BY_EMAIL = 'REG_EMAIL';
-    const SOURCE_CREATED_BY_ADMIN = 'CREATED_BY_ADMIN';
-    const SOURCE_INTERNAL = 'INTERNAL';
+    public const SOURCE_REGISTRATION_BY_EMAIL = 'REG_EMAIL';
+    public const SOURCE_CREATED_BY_ADMIN = 'CREATED_BY_ADMIN';
+    public const SOURCE_INTERNAL = 'INTERNAL';
 
     /**
      * @ORM\Id
@@ -42,7 +38,6 @@ class User extends BaseUser
      *
      * @Serializer\Groups({"user"})
      * @ORM\Column(name="last_name", type="string", nullable=true)
-     * @Gedmo\Versioned
      */
     private $lastName;
 
@@ -51,7 +46,6 @@ class User extends BaseUser
      *
      * @Serializer\Groups({"user"})
      * @ORM\Column(name="first_name", type="string", nullable=true)
-     * @Gedmo\Versioned
      */
     private $firstName;
 
@@ -60,7 +54,6 @@ class User extends BaseUser
      *
      * @Serializer\Groups({"user"})
      * @ORM\Column(name="company_name", type="string", nullable=true)
-     * @Gedmo\Versioned
      */
     private $companyName;
 
@@ -69,7 +62,6 @@ class User extends BaseUser
      *
      * @Serializer\Groups({"user"})
      * @ORM\Column(name="address", type="string", nullable=true)
-     * @Gedmo\Versioned
      */
     private $address;
 
@@ -78,7 +70,6 @@ class User extends BaseUser
      *
      * @Serializer\Groups({"user"})
      * @ORM\Column(name="mobile_number", type="string", nullable=true)
-     * @Gedmo\Versioned
      */
     private $phoneNumber;
 
@@ -87,7 +78,6 @@ class User extends BaseUser
      *
      * @Serializer\Groups({"user"})
      * @ORM\Column(name="source", type="string", nullable=true)
-     * @Gedmo\Versioned
      */
     private $source;
 
@@ -96,7 +86,6 @@ class User extends BaseUser
      *
      * @Serializer\Groups("user")
      * @ORM\Column(name="registered_at", type="datetime", nullable=true)
-     * @Gedmo\Versioned
      */
     private $registeredAt;
 
@@ -104,26 +93,21 @@ class User extends BaseUser
      * @var string
      *
      * @Serializer\Groups({"user"})
-     * @Assert\Choice(choices={"INDIVIDUAL", "ENTREPRENEUR", "LEGAL_ENTITY"}, groups={"Registration", "Profile"})
      * @ORM\Column(name="legal_status", type="string", length=50, nullable=true)
-     * @Gedmo\Versioned
      */
     private $legalStatus;
 
     /**
      * @var string
      *
-     * @Assert\NotNull()
-     * @Assert\Length(max="12", min="12", groups={"Registration", "Profile"})
      * @ORM\Column(name="identification_number", type="string", length=12, nullable=true, unique=true)
-     * @Gedmo\Versioned
      */
     private $identificationNumber;
 
     public function __construct()
     {
         parent::__construct();
-        $this->uuid = UuidGenerator::generate();
+        $this->uuid = generate_uuid();
         $this->source = self::SOURCE_INTERNAL;
         $this->enabled = true;
         $this->legalStatus = LegalStatus::INDIVIDUAL;

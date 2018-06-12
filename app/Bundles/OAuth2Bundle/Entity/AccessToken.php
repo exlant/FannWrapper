@@ -1,4 +1,5 @@
 <?php
+/** @noinspection ALL */
 declare(strict_types=1);
 
 namespace App\Bundles\OAuth2Bundle\Entity;
@@ -7,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use FOS\OAuthServerBundle\Entity\AccessToken as BaseAccessToken;
 use App\Bundles\UserBundle\Entity\User;
 use phpDocumentor\Reflection\Types\Nullable;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * AccessToken
@@ -73,10 +75,10 @@ class AccessToken extends BaseAccessToken
     /**
      * Set user
      *
-     * @param \Symfony\Component\Security\Core\User\UserInterface
+     * @param UserInterface $user
      * @return AccessToken
      */
-    public function setUser(\Symfony\Component\Security\Core\User\UserInterface $user = null)
+    public function setUser(UserInterface $user = null)
     {
         $this->user = $user;
 
@@ -92,5 +94,4 @@ class AccessToken extends BaseAccessToken
     {
         return $this->user;
     }
-
 }

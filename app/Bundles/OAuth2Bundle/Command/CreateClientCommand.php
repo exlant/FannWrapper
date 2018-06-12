@@ -5,8 +5,8 @@ namespace App\Bundles\OAuth2Bundle\Command;
 
 use App\Bundles\OAuth2Bundle\Entity\Client;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
