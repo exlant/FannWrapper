@@ -4,10 +4,10 @@ declare(strict_types=1);
 namespace App\Core\Abstracts;
 
 /**
- * Class ARoutController
+ * Class TextField
  *
  * @package App\Core\Abstracts
  */
-abstract class ARouteController extends AController
+class TextField extends RequestField
 {
 }

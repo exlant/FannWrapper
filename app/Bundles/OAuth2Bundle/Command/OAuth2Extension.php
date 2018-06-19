@@ -1,8 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Bundles\OAuth2Bundle\DI;
+namespace App\Bundles\OAuth2Bundle\Command;
 
+use App\Bundles\OAuth2Bundle\DI\Configuration;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;

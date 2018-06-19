@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Service;
+namespace App\Services;
 
 use App\Core\Interfaces\IErrorHandler;
 use SplSubject;
@@ -19,7 +19,7 @@ class ErrorObserver implements \SplObserver
     public function update(SplSubject $subject)
     {
         foreach ($subject->getErrors() as $error) {
-            \var_dump($error);
+        
         }
     }
 }

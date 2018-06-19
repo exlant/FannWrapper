@@ -2,10 +2,19 @@
 
 namespace App\Bundles\UserBundle\Exception;
 
-use App\Bundles\AppBundle\Exception\Exception;
+use App\Core\Exceptions\InvalidArgumentIException;
 
-class InvalidRegistrationSourceException extends \Exception implements Exception
+/**
+ * Class InvalidRegistrationSourceException
+ *
+ * @package App\Bundles\UserBundle\Exception
+ */
+class InvalidRegistrationSourceException extends InvalidArgumentIException
 {
+    /**
+     * InvalidRegistrationSourceException constructor.
+     * @param $source
+     */
     public function __construct($source)
     {
         $message = 'Invalid registration source: ' . $source;

@@ -31,7 +31,7 @@ class ProfileService extends BaseRequestService
         $parameters = new ParameterBag();
 
         $this->handleRequest($requestParameters, $parameters, [
-            new TextField('firstName'),
+            new TextFiel('firstName'),
             new TextField('lastName'),
             new TextField('companyName'),
             new TextField('address'),

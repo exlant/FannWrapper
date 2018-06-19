@@ -8,6 +8,11 @@ use App\Bundles\UserBundle\Entity\User;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class SecurityService
+ *
+ * @package App\Bundles\OAuth2Bundle\Service
+ */
 class SecurityService
 {
     /** @var ContainerInterface */
